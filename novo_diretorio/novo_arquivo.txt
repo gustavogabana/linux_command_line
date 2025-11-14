@@ -1,0 +1,4 @@
+teste de criacao de novo arquivo via cat > novo_arquivo.txt
+hello world
+nova linha
+comando para add mais conteudo no final via cat >> [nome_arquivo]
