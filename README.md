@@ -25,8 +25,6 @@ REPL (Read, Eval, Print, Loop)
 3. Mostra o resultado na tela
 4. Reinicia o processo
 
-### Variáveis
-
 Criar uma variável
 ```
 variavel=valor ou variavel="valor"
@@ -38,8 +36,6 @@ echo $variavel
 ```
 
 Se o conteudo da variável for um comando, chamar a var irá executar o comando
-
-### History
 
 O comando history exibe o histórico dos últimos comandos digitados no sheel/terminal
 ```
@@ -139,4 +135,56 @@ Grep, comando case-sensitive para pesquisar textos dentro de arquivos ou em resu
 grep "hello" words.txt pesquisa a palavra hello dentro do arquivo words ou grep -r "hello" . ou diretorio/ para buscar recursivamente
 ```
 
+### Permissions
+
+No linux, os usuários tem permissões referentes aos arquivos. Cada usuário tem 3 possibilidades: lêr, escrever ou executar (r, w,x). A string que informa as permissões é composta por 10 letras.
+```
+**********
+```
+
+1. A primeira, informa se é um arquivo ou diretório. Se for d, é diretório, se for -, é arquivo.
+```
+d *** *** *** ou - *** *** ***
+```
+
+2. As próximas 3 sequências dizem respeito as permissões (r, w, x) do dono do arquivo ou diretório (qual o user que criou). Caso ele não tenha uma permissão, será a letra -. Se tiver, será umas das 3 letras que representam as permissões.
+```
+d rwx *** *** (todas as permissões) ou d --- *** *** (sem permissão)
+```
+
+3. As 3 letras sequentes informam as mesmas permissões rwx, porém para o grupo. Todo usuário que estiver dentro desse grupo, irá ter as permissões informadas.
+```
+d rwx rwx *** (todas as permissões) ou d --- --- *** (sem permissão)
+```
+
+4. A sequência final também informa as permissões, porém para todos.
+```
+d rwx rwx rwx (todas as permissões) ou d --- --- --- (sem permissão)
+```
+
+5. Caso o usuário não tenha uma das permissões, a letra será - para a ação que ele não pode executar. Ex:
+```
+d rwx rw- r-- (diretório, user dono do arquivo pode fazer tudo, usuário do grupo só podem ler e escrever, os demais só podem ler)
+```
+
+O comando para ver as informações dos arquivos, incluindo as permissões, é:
+```
+ls -l (long listing format)
+```
+
+Para alterar ou adicionar permissões, use o comando chmod
+```
+chmod -R (recursivamente) u=rwx (user ganha todas as perms) g= o= (grupo e outros(others) não ter perm pra nada) diretorio
+```
+
+Também pode ser feito via números: r=4 w=2 x=1, logo, todas as permissões igual a 7
+```
+chmod 777 arquivo.txt (todos tem todas as perms) ou chmod 744 arquivo.txt (dono tem todas, os demais só r)
+chmod -x arquivo.sh (remove a permissao de executar o arquivo, impedindo erros, acidentes ou virus/malware)
+```
+
+chown (change owner) altera quem é o proprietário ou o grupo do arquivo/dir
+```
+chown novo-usuario:novo-grupo (grupo precisa colocar o : antes para identificar) arquivo.txt
+```
 
