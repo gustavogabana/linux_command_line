@@ -57,7 +57,7 @@ pwd
 
 Para listar o que tem no diretório atual
 ```
-ls
+ls ou ls -a (para listar tudo incluindo arquivos hidden)
 ```
 
 E para listar o que tem em outro diretório
@@ -186,5 +186,27 @@ chmod -x arquivo.sh (remove a permissao de executar o arquivo, impedindo erros, 
 chown (change owner) altera quem é o proprietário ou o grupo do arquivo/dir
 ```
 chown novo-usuario:novo-grupo (grupo precisa colocar o : antes para identificar) arquivo.txt
+```
+
+### Programs
+
+Comando which para localizar o caminho absoluto de um programa excutável
+```
+which sh (para localizar onde fica o executavel dos arquivos sh)
+```
+
+Shebang, comando para definir o caminho do interpretador que irá executar o código
+```
+#! /caminho/interpretador ou #! /bin/bash
+```
+
+Environment variables (env), são visíveis e disponíveis para todo o sistema. Para criar, use a palavra export. Para ver todas, use o comando env
+```
+export NAME='TESTE' para setar, echo $NAME para ver, ou env para listar todas as envs do sistema
+```
+
+PATH: Uma variavél de ambiente que guarda uma lista de diretórios (caminhos) separados por : usados pelo sistema e por outros programas pré-instalados ou novos. O shell irá olhar o conteúdo do PATH sempre que executar um comando procurando pelo caminho que aponta para o executável do comando digitado e, se encontrar, irá executar o comando. Exemplo de comando: ls, que fica em /bin/ls
+```
+echo $PATH
 ```
 
