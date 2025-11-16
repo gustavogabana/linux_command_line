@@ -1,4 +1,5 @@
 # LINUX COMMAND LINE
+# 1 byte = 8 bits
 
 ## Comandos básicos do linux/terminal
 
@@ -210,3 +211,61 @@ PATH: Uma variavél de ambiente que guarda uma lista de diretórios (caminhos) s
 echo $PATH
 ```
 
+### Input/Output
+
+RTFM (Read The Fucking Manual)
+
+Comando man para ver o manual de um comando (man ls), e comando man man para ver o manual do manual.
+```
+man ls (ou outro comando) ou man man
+```
+
+Flags: Paramêtros passados nos comandos para adicionar ou especificar ações executadas pelo comando.
+```
+ls (comando) -l (param) ou ls -a ou ls -al (dois params)
+```
+
+Número de bytes: para saber o número de linhas, palavras ou bytes de um arquivo, use o comando wc (word count).
+```
+wc exemplo.txt (exibe as colunas com o numero de linhas, palavras e bytes)
+wc -c exemplo.txt (exibe apenas a quantidade de bytes)
+```
+
+Exit code: Código de saída, no linux, é representada pela variável ?, que contém o código de saída do último comando executado. Normalmente, é usado 0 como exit code de sucesso e 1 como exit code de erro. Para ver o exit code do último comando, use:
+```
+echo $?
+```
+
+Redirecionar stream: Para redirecionar streams (saídas) como entradas de outros programas, use > para saídas do tipo stdout e 2> para saídas do tipo stderr. Com > o conteúdo do arquivo será sobreescrito, mas com >> será adicionado como uma nova linha.
+```
+echo "Hello world" > hello.txt
+cat notexist.txt 2> error.txt
+cat error.txt
+```
+
+Input stream (stdin): Para fazer inputs no shell, use o comando read seguido da variavel que armazenará o valor inputado. Use a expresão E (&&) para executar os comando em ordem sequencial caso digite diretamente no shell.
+```
+echo "Digite seu nome: " &&
+read NAME &&
+echo "Seu nome é $NAME"
+```
+
+Piping e Pipe (|): O pipe (|) é o comando que permite pegar o output do comando anterior e passar como param como input do próximo comando.
+```
+echo "meu nome é gustavo" | wc -c (pega o resultado do comando echo e passa como param para o comando wc -c. os espaços também são contado porque são caracteres)
+```
+
+SIGINT (signal interrupt) e kill: Seu exit code é 2 e por padrão ele interromape a execução do programa que está em primeiro plano. Seu atalho é ctrl + c, e ele também pode ser usado como param para o comando kill, que mata o processo no linux.
+```
+kill -SIGINT PID (Process ID)
+```
+
+Process Status (ps): O comando ps exibe os processos sendo executados na máquina. É comumente usado com o param aux, que diz ao ps para mostrar todos os processos de todos os users, e informações extras.
+```
+ps aux
+```
+
+Top: O comando top exibe o uso dos recursos pelos processos sendo executados. Para sair, use a letra q (quit).
+```
+top
+```
