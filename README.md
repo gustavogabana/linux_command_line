@@ -269,3 +269,12 @@ Top: O comando top exibe o uso dos recursos pelos processos sendo executados. Pa
 ```
 top
 ```
+
+### Package Manager
+
+Ferramenta de software para baixar e gerenciar e remover pacotes no sistema.
+
+Para instalar, é necessário user com root. Em sistemas debian-based, o gerenciador padrão é o apt.
+```
+sudo apt install htop (usa o sudo para instalar o htop)
+```
