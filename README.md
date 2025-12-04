@@ -109,6 +109,8 @@ touch novo-arquivo.txt
 Para criar um diretório (pasta) novo, use o comando mkdir (make directory)
 ```
 mkdir novo_diretorio
+mkdir -p (parents) para criar o diretório recursivamente, criando as pastas intermediárias
+mdkir -p /home/usuario/docs/projetos se docs não existir, irá criar. se projetos existir, não ocorre erro
 ```
 
 Para mover um arquivo ou diretório de lugar, use o comando mv (move)
