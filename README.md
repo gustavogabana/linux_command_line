@@ -26,6 +26,8 @@ REPL (Read, Eval, Print, Loop)
 3. Mostra o resultado na tela
 4. Reinicia o processo
 
+### Variáveis e histórico
+
 Criar uma variável
 ```
 variavel=valor ou variavel="valor"
@@ -47,7 +49,8 @@ Com o parâmetro -c, o histórico é limpado (mas ainda ficará no arquivo .bash
 ```
 history -c
 ```
-### Filesystem
+
+### Filesystem e comandos básicos
 
 No linux, tudo são arquivos, que ficam em diretórios, que são distribuidos no sistema como uma árvore (tree file system), sendo o ponto inicial a /
 
@@ -76,6 +79,8 @@ Caminhos relativos não começam com /, enquanto caminhos absolutos começam sem
 teste/downloads (relativo) /home/teste/downloads (absoluto) 
 ```
 
+### Manipulação de arquivos
+
 Comando cat (concatenate) exibe o conteúdo de um arquivo
 ```
 cat README.md
@@ -100,6 +105,8 @@ Comando less permite ver o conteúdo de um arquivo de forma páginada. As setas 
 ```
 less exemplo.txt
 ```
+
+### Criação de arquivos e diretórios
 
 O comando touch atualiza a data e hora (metadados) de um arquivo. Por padrão, o arquivo não existir, touch irá criar esse arquivo e, por isso, é majoritariamente usado para criação de arquivos.
 ```
@@ -237,6 +244,8 @@ Exit code: Código de saída, no linux, é representada pela variável ?, que co
 ```
 echo $?
 ```
+
+### Escrever em arquivos e direcionamento de resultados
 
 Redirecionar stream: Para redirecionar streams (saídas) como entradas de outros programas, use > para saídas do tipo stdout e 2> para saídas do tipo stderr. Com > o conteúdo do arquivo será sobreescrito, mas com >> será adicionado como uma nova linha.
 ```
