@@ -289,3 +289,14 @@ Para instalar, é necessário user com root. Em sistemas debian-based, o gerenci
 ```
 sudo apt install htop (usa o sudo para instalar o htop)
 ```
+
+
+## Shutdown
+
+Use o comando shutdown para desligar o sistema, com agendamento ou imediatamente:
+```
+sudo shutdown now (desligar imediatamente)
+sudo shutdown hh:mm (hora minuto para agendar o desligamento)
+sudo shutdown +30 (desliga em 30 minutos)
+sudo shutdown -c (para cancelar o agendamento)
+```
